@@ -1,0 +1,18 @@
+const mainbutton= document.querySelector("button");
+const body=document.body; 
+const currentColor=document.querySelector(".current-color");
+
+function randomColorGenerator(){
+    const red= Math.floor(Math.random()*256);
+    const green= Math.floor(Math.random()*256);
+    const bule= Math.floor(Math.random()*256);
+    const randomColor=`rgb(${red},${green},${bule})`;
+    return randomColor;
+}
+
+mainbutton.addEventListener("click",()=>{
+    // console.log( randomColorGenerator());
+    const colorName= randomColorGenerator();
+    body.style.backgroundColor=colorName;
+    currentColor.textContent=colorName;
+})
